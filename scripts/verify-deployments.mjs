@@ -16,36 +16,30 @@ try {
     await sleep(800);
 
     const check = await page.eval(`(() => {
-      const h1 = document.querySelector("h1")?.innerText.trim();
-      const beforeFee = document.getElementById("pricing-amount")?.innerText.trim();
-      const retainerBtn = document.querySelector('[data-scope="retainer"]');
-      retainerBtn?.click();
-      const afterFee = document.getElementById("pricing-amount")?.innerText.trim();
-      const routedEmail = document.getElementById("routed-email")?.innerText.trim();
+      const h1Before = document.getElementById("backdrop-title")?.innerText.trim();
+      const card = document.querySelector('[data-project="solukhumbu"]');
+      card?.dispatchEvent(new MouseEvent("mouseenter"));
+      const h1After = document.getElementById("backdrop-title")?.innerText.trim();
 
-      const patanTile = document.querySelector('[data-work-id="patan"]');
-      patanTile?.click();
-      const activeWork = document.getElementById("ledger-title")?.innerText.trim();
+      card?.click();
+      const inspectorOpen = document.getElementById("project-inspector")?.classList.contains("is-open");
+      const inspectorTitle = document.getElementById("inspector-title")?.innerText.trim();
+      document.getElementById("inspector-close")?.click();
 
-      const summitBtn = document.querySelector('[data-cal-mode="summit"]');
-      summitBtn?.click();
-      const specimenTracking = document.getElementById("cal-specimen")?.style.letterSpacing;
+      document.getElementById("theme-toggle")?.click();
+      const darkTheme = document.documentElement.getAttribute("data-theme");
 
-      const stage2 = document.querySelector('[data-stage="1"]');
-      stage2?.click();
-      const stage2Open = stage2?.classList.contains("is-open");
-
+      const creditsPresent = document.body.innerText.includes("Wikimedia Commons");
       const brokenImages = [...document.images].filter(i => i.complete && i.naturalWidth === 0).length;
-      return { h1, beforeFee, afterFee, routedEmail, activeWork, specimenTracking, stage2Open, brokenImages };
+      return { h1Before, h1After, inspectorOpen, inspectorTitle, darkTheme, creditsPresent, brokenImages };
     })()`);
 
-    assert.equal(check.h1, "BUILT FOR", `${url}: expected H1 'BUILT FOR'`);
-    assert.equal(check.beforeFee, "£28,000", `${url}: expected initial fee £28,000`);
-    assert.equal(check.afterFee, "£34,000", `${url}: expected toggled fee £34,000`);
-    assert.equal(check.routedEmail, "projects@himalayacreativestudio.com", `${url}: expected routed desk email`);
-    assert.match(check.activeWork, /Patan Foundry/i, `${url}: expected work ledger to switch to Patan Foundry`);
-    assert.equal(check.specimenTracking, "-0.045em", `${url}: expected calibrator tracking -0.045em`);
-    assert.equal(check.stage2Open, true, `${url}: expected stage 2 accordion to open`);
+    assert.equal(check.h1Before, "Himalaya", `${url}: expected initial backdrop 'Himalaya'`);
+    assert.equal(check.h1After, "Solukhumbu", `${url}: expected hovered backdrop 'Solukhumbu'`);
+    assert.equal(check.inspectorOpen, true, `${url}: expected 3D project inspector to open`);
+    assert.equal(check.inspectorTitle, "Solukhumbu", `${url}: expected inspector title 'Solukhumbu'`);
+    assert.equal(check.darkTheme, "dark", `${url}: expected theme toggle to set dark mode`);
+    assert.equal(check.creditsPresent, false, `${url}: expected Wikimedia credit wall to be removed`);
     assert.equal(check.brokenImages, 0, `${url}: expected 0 broken images`);
     assert.equal(page.consoleErrors.length, 0, `${url}: expected 0 console errors`);
 
