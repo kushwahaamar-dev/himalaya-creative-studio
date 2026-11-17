@@ -10,7 +10,6 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@900&amp;family=Red+Hat+Text:wght@400;500&amp;display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
-  <script>document.documentElement.classList.add('js');</script>
 </head>
 <body>
   <header class="site-header" id="site-header">
@@ -30,14 +29,14 @@
   </header>
 
   <main id="top">
-    <section class="hero" data-ink="#2a1110" aria-label="Introduction">
+    <section class="hero" aria-label="Introduction">
       <div class="hero__upper">
         <div class="hero__headline-wrap">
-          <h1 class="hero__title hero__title--top" data-rise style="--i:0">Built for</h1>
+          <h1 class="hero__title hero__title--top" aria-label="Built for thin air" data-rise style="--i:0">Built for</h1>
         </div>
       </div>
-      <div class="hero__lower" data-ink="#ffffff">
-        <div class="hero__headline-wrap">
+      <div class="hero__lower">
+        <div class="hero__headline-wrap" aria-hidden="true">
           <p class="hero__title hero__title--bottom" data-rise style="--i:1">thin air</p>
         </div>
         <div class="hero__lower-grid">
@@ -68,15 +67,15 @@
       </div>
     </section>
 
-    <section class="chapter chapter--work" id="work" data-ink="#ffffff" aria-labelledby="work-heading">
+    <section class="chapter chapter--work" id="work" aria-labelledby="work-heading">
       <div class="work-header" data-reveal style="--d:0">
         <h2 class="work-header__title" id="work-heading">Shipped work</h2>
         <a href="mailto:projects@himalayacreativestudio.com?subject=Full%20Archive%20Request%20-%20Himalaya%20Creative%20Studio" class="work-header__link">Request full dossier via projects@himalayacreativestudio.com</a>
       </div>
 
-      <div class="work-wall" role="list" aria-label="Selected studio commissions">
+      <div class="work-wall" aria-label="Selected studio commissions">
         <div class="work-row work-row--r1">
-          <figure class="work-tile work-tile--w1" role="listitem" tabindex="0" data-work-id="khumbu" data-reveal style="--d:1">
+          <figure class="work-tile work-tile--w1" role="button" aria-pressed="true" tabindex="0" data-work-id="khumbu" data-reveal style="--d:1">
             <div class="work-tile__media">
               <img src="assets/everest-nuptse-khumbu-glacier-nepal-himalayas.jpg" width="1920" height="1356" loading="lazy" decoding="async" alt="West face of Lhotse-Nuptse massif and the Khumbu Glacier in the Nepal Himalayas">
             </div>
@@ -86,7 +85,7 @@
             </figcaption>
           </figure>
 
-          <figure class="work-tile work-tile--w2" role="listitem" tabindex="0" data-work-id="patan" data-reveal style="--d:2">
+          <figure class="work-tile work-tile--w2" role="button" aria-pressed="false" tabindex="0" data-work-id="patan" data-reveal style="--d:2">
             <div class="work-tile__media">
               <img src="assets/himalayas-ama-dablam-nepal.jpg" width="1920" height="1280" loading="lazy" decoding="async" alt="Steep snow and rock pyramid of Ama Dablam peak rising above the Chola Valley">
             </div>
@@ -96,7 +95,7 @@
             </figcaption>
           </figure>
 
-          <figure class="work-tile work-tile--w3" role="listitem" tabindex="0" data-work-id="solukhumbu" data-reveal style="--d:3">
+          <figure class="work-tile work-tile--w3" role="button" aria-pressed="false" tabindex="0" data-work-id="solukhumbu" data-reveal style="--d:3">
             <div class="work-tile__media">
               <img src="assets/everest-himalayas.jpg" width="1920" height="1280" loading="lazy" decoding="async" alt="Dark rock pyramid of Mount Everest summit ridge with wind-blown snow plume">
             </div>
@@ -108,7 +107,7 @@
         </div>
 
         <div class="work-row work-row--r2">
-          <figure class="work-tile work-tile--w4" role="listitem" tabindex="0" data-work-id="annapurna" data-reveal style="--d:1">
+          <figure class="work-tile work-tile--w4" role="button" aria-pressed="false" tabindex="0" data-work-id="annapurna" data-reveal style="--d:1">
             <div class="work-tile__media">
               <img src="assets/annapurna-massif-img-5221-pano.jpg" width="1920" height="684" loading="lazy" decoding="async" alt="Wide sunlit panorama of Annapurna South and Annapurna I above golden alpine grass">
             </div>
@@ -118,7 +117,7 @@
             </figcaption>
           </figure>
 
-          <figure class="work-tile work-tile--w5" role="listitem" tabindex="0" data-work-id="mustang" data-reveal style="--d:2">
+          <figure class="work-tile work-tile--w5" role="button" aria-pressed="false" tabindex="0" data-work-id="mustang" data-reveal style="--d:2">
             <div class="work-tile__media">
               <img src="assets/sunset-view-of-everest.jpg" width="1920" height="1280" loading="lazy" decoding="async" alt="Crimson sunset alpenglow illuminating the summit of Mount Everest and Lhotse against a dusk sky">
             </div>
@@ -130,7 +129,7 @@
         </div>
 
         <div class="work-row work-row--r3">
-          <figure class="work-tile work-tile--w3" role="listitem" tabindex="0" data-work-id="orbital" data-reveal style="--d:1">
+          <figure class="work-tile work-tile--w3" role="button" aria-pressed="false" tabindex="0" data-work-id="orbital" data-reveal style="--d:1">
             <div class="work-tile__media">
               <img src="assets/himalayas.jpg" width="1920" height="1265" loading="lazy" decoding="async" alt="High-altitude orbital photograph of the snow-covered Himalayan range and Tibetan plateau from space">
             </div>
@@ -140,7 +139,7 @@
             </figcaption>
           </figure>
 
-          <figure class="work-tile work-tile--w1" role="listitem" tabindex="0" data-work-id="ghorepani" data-reveal style="--d:2">
+          <figure class="work-tile work-tile--w1" role="button" aria-pressed="false" tabindex="0" data-work-id="ghorepani" data-reveal style="--d:2">
             <div class="work-tile__media">
               <img src="assets/annapurna-i-annapurna-south-and-himchuli-from.jpg" width="1920" height="1536" loading="lazy" decoding="async" alt="Layered blue ridges and peaks of Annapurna I, Annapurna South, and Himchuli at dawn">
             </div>
@@ -150,7 +149,7 @@
             </figcaption>
           </figure>
 
-          <figure class="work-tile work-tile--w2" role="listitem" tabindex="0" data-work-id="manang" data-reveal style="--d:3">
+          <figure class="work-tile work-tile--w2" role="button" aria-pressed="false" tabindex="0" data-work-id="manang" data-reveal style="--d:3">
             <div class="work-tile__media">
               <img src="assets/snowy-annapurna-range-panorama.jpg" width="1920" height="733" loading="lazy" decoding="async" alt="High-contrast snow ridges of the Annapurna massif rising above dark pine slopes">
             </div>
@@ -165,7 +164,7 @@
       <div class="work-ledger" id="work-ledger" aria-live="polite" data-reveal style="--d:2">
         <div class="work-ledger__main">
           <p class="work-ledger__title" id="ledger-title">Khumbu Cryosphere Atlas · Cartographic UI</p>
-          <p class="work-ledger__summary" id="ledger-summary">Interactive glacier mass-balance telemetry and WebGL contour browser built for glaciologists tracking 42 Himalayan basins. Click any commission above to inspect its field record.</p>
+          <p class="work-ledger__summary" id="ledger-summary">Interactive glacier mass-balance telemetry and contour browser built for glaciologists tracking 42 Himalayan basins.</p>
         </div>
         <div class="work-ledger__specs">
           <div>
@@ -184,8 +183,8 @@
       </div>
     </section>
 
-    <section class="chapter chapter--showcase" id="instruments" data-ink="#2a1110" aria-labelledby="showcase-heading">
-      <div class="showcase-panel showcase-panel--left" data-ink="#2a1110">
+    <section class="chapter chapter--showcase" id="instruments" aria-labelledby="showcase-heading">
+      <div class="showcase-panel showcase-panel--left">
         <div class="showcase-panel__top" data-reveal style="--d:0">
           <h2 class="chapter-title" id="showcase-heading">Field<br>instruments</h2>
         </div>
@@ -206,7 +205,7 @@
         </div>
       </div>
 
-      <div class="showcase-panel showcase-panel--right" data-ink="#2a1110">
+      <div class="showcase-panel showcase-panel--right">
         <div class="showcase-panel__top" data-reveal style="--d:0">
           <p class="showcase-panel__name">Live Optical Type Calibrator</p>
         </div>
@@ -248,15 +247,15 @@
       </div>
     </section>
 
-    <section class="chapter chapter--process" id="camps" data-ink="#2a1110" aria-labelledby="camps-heading">
+    <section class="chapter chapter--process" id="camps" aria-labelledby="camps-heading">
       <div class="grid process-intro" data-reveal style="--d:0">
         <h2 class="chapter-title process-intro__title" id="camps-heading">Four camps</h2>
         <p class="process-intro__body">Every commission ascends through four fixed camps over eight weeks. You work directly with the founding design and engineering partners from first survey to production deployment, with no account managers between your brief and the keyboard.</p>
       </div>
 
-      <div class="process-accordion" role="tablist" aria-label="Commission stages" data-reveal style="--d:1">
-        <article class="stage-panel stage-panel--s1 is-open" data-stage="0" role="tab" aria-selected="true" tabindex="0">
-          <button type="button" class="stage-panel__trigger">Base Camp · Survey &amp; Positioning</button>
+      <div class="process-accordion" role="group" aria-label="Commission stages" data-reveal style="--d:1">
+        <article class="stage-panel stage-panel--s1 is-open" data-stage="0">
+          <button type="button" class="stage-panel__trigger" aria-expanded="true">Base Camp · Survey &amp; Positioning</button>
           <div class="stage-panel__content">
             <div class="stage-panel__copy">
               <p class="stage-panel__desc">Weeks one and two. We audit your product architecture, interview founders, strip category clichés, and write the plain-language argument for every screen before drawing a single pixel.</p>
@@ -268,8 +267,8 @@
           </div>
         </article>
 
-        <article class="stage-panel stage-panel--s2" data-stage="1" role="tab" aria-selected="false" tabindex="0">
-          <button type="button" class="stage-panel__trigger">Camp II · Identity &amp; Typography</button>
+        <article class="stage-panel stage-panel--s2" data-stage="1">
+          <button type="button" class="stage-panel__trigger" aria-expanded="false">Camp II · Identity &amp; Typography</button>
           <div class="stage-panel__content">
             <div class="stage-panel__copy">
               <p class="stage-panel__desc">Weeks three and four. We cut custom wordmarks, set the typographic scale across desktop and mobile viewports, and lock a high-contrast colour field system tested under real browser rendering.</p>
@@ -281,8 +280,8 @@
           </div>
         </article>
 
-        <article class="stage-panel stage-panel--s3" data-stage="2" role="tab" aria-selected="false" tabindex="0">
-          <button type="button" class="stage-panel__trigger">Camp III · Interface Systems</button>
+        <article class="stage-panel stage-panel--s3" data-stage="2">
+          <button type="button" class="stage-panel__trigger" aria-expanded="false">Camp III · Interface Systems</button>
           <div class="stage-panel__content">
             <div class="stage-panel__copy">
               <p class="stage-panel__desc">Weeks five and six. We build interactive component libraries, application workflows, and responsive layouts directly in browser code so you review real interactive software rather than flat pictures.</p>
@@ -294,8 +293,8 @@
           </div>
         </article>
 
-        <article class="stage-panel stage-panel--s4" data-stage="3" role="tab" aria-selected="false" tabindex="0">
-          <button type="button" class="stage-panel__trigger">Summit · Production Engineering</button>
+        <article class="stage-panel stage-panel--s4" data-stage="3">
+          <button type="button" class="stage-panel__trigger" aria-expanded="false">Summit · Production Engineering</button>
           <div class="stage-panel__content">
             <div class="stage-panel__copy">
               <p class="stage-panel__desc">Weeks seven and eight. We ship production code, verify accessibility and Core Web Vitals across viewports, wire custom domains and DNS security, and deploy to edge infrastructure.</p>
@@ -309,7 +308,7 @@
       </div>
     </section>
 
-    <section class="chapter chapter--pricing" id="commission" data-ink="#ffffff" aria-labelledby="pricing-heading">
+    <section class="chapter chapter--pricing" id="commission" aria-labelledby="pricing-heading">
       <div data-reveal style="--d:0">
         <h2 class="pricing-statement" id="pricing-heading">
           <span id="pricing-duration">Eight weeks</span> at <span class="pricing-figure" id="pricing-amount">£28,000</span>
@@ -344,13 +343,13 @@
       <div class="grid pricing-bottom" data-reveal style="--d:2">
         <p class="pricing-bottom__lead">Half upon booking your seasonal slot, half upon production ship. We accept four commissions per season so every screen is drawn and engineered by the partners.</p>
         <div class="pricing-bottom__cta">
-          <a href="mailto:projects@himalayacreativestudio.com?subject=Commission%20Brief%20%E2%80%94%20Himalaya%20Creative%20Studio%20Limited&amp;body=Selected%20Scope%3A%20Brand%20%26%20Typography%2C%20UI%20Design%20System%2C%20Production%20Web%20Build%20(%C2%A328%2C000%20%C2%B7%208%20Weeks)" class="button button--paper" id="dispatch-cta">Dispatch brief to projects@</a>
-          <a href="mailto:hello@himalayacreativestudio.com?subject=Introductory%20Call%20%E2%80%94%20Himalaya%20Creative%20Studio" class="hero__secondary-link">Or write to hello@himalayacreativestudio.com</a>
+          <a href="mailto:projects@himalayacreativestudio.com?subject=Commission%20Brief%20%C2%B7%20Himalaya%20Creative%20Studio%20Limited&amp;body=Selected%20Scope%3A%20Brand%20%26%20Typography%2C%20UI%20Design%20System%2C%20Production%20Web%20Build%20(%C2%A328%2C000%20%C2%B7%208%20Weeks)" class="button button--paper" id="dispatch-cta">Dispatch brief to projects@</a>
+          <a href="mailto:hello@himalayacreativestudio.com?subject=Introductory%20Call%20-%20Himalaya%20Creative%20Studio" class="hero__secondary-link">Or write to hello@himalayacreativestudio.com</a>
         </div>
       </div>
     </section>
 
-    <section class="chapter chapter--about" id="studio" data-ink="#2a1110" aria-labelledby="about-heading">
+    <section class="chapter chapter--about" id="studio" aria-labelledby="about-heading">
       <div class="grid about-top" data-reveal style="--d:0">
         <h2 class="chapter-title about-top__title" id="about-heading">Kathmandu<br>to London</h2>
         <p class="about-top__lead">Named after the Sanskrit himālaya, abode of snow, Himalaya Creative Studio Limited pairs the craft heritage of the Kathmandu Valley with technical product direction in London.</p>
@@ -387,7 +386,7 @@
     </section>
   </main>
 
-  <footer class="site-footer" data-ink="#e2dccf">
+  <footer class="site-footer">
     <div class="footer-monument" data-reveal style="--d:0">
       <span class="footer-monument__word">Himalaya</span>
     </div>

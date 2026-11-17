@@ -139,6 +139,9 @@ function initWorkLedger() {
   const activate = (id) => {
     const entry = WORK_ARCHIVE[id];
     if (!entry || !titleEl) return;
+    tiles.forEach((tile) => {
+      tile.setAttribute("aria-pressed", String(tile.getAttribute("data-work-id") === id));
+    });
     titleEl.textContent = entry.title;
     summaryEl.textContent = entry.summary;
     altitudeEl.textContent = entry.altitude;
@@ -185,18 +188,13 @@ function initProcessAccordion() {
     panels.forEach((panel) => {
       const active = panel === target;
       panel.classList.toggle("is-open", active);
-      panel.setAttribute("aria-selected", String(active));
+      const btn = panel.querySelector(".stage-panel__trigger");
+      if (btn) btn.setAttribute("aria-expanded", String(active));
     });
   };
 
   panels.forEach((panel) => {
     panel.addEventListener("click", () => openPanel(panel));
-    panel.addEventListener("keydown", (e) => {
-      if (e.key === "Enter" || e.key === " ") {
-        e.preventDefault();
-        openPanel(panel);
-      }
-    });
   });
 }
 
@@ -213,11 +211,6 @@ function initCommissionRouter() {
     const activeKeys = buttons
       .filter((b) => b.getAttribute("aria-pressed") === "true")
       .map((b) => b.getAttribute("data-scope"));
-
-    if (activeKeys.length === 0) {
-      activeKeys.push("identity");
-      buttons[0].setAttribute("aria-pressed", "true");
-    }
 
     const totalFee = activeKeys.reduce((sum, k) => sum + SCOPE_MODULES[k].fee, 0);
     const totalWeeks = activeKeys.reduce((sum, k) => sum + SCOPE_MODULES[k].weeks, 0);
@@ -246,33 +239,18 @@ function initCommissionRouter() {
   buttons.forEach((btn) => {
     btn.addEventListener("click", () => {
       const pressed = btn.getAttribute("aria-pressed") === "true";
+      const activeCount = buttons.filter((b) => b.getAttribute("aria-pressed") === "true").length;
+      if (pressed && activeCount <= 1) return;
       btn.setAttribute("aria-pressed", String(!pressed));
       render();
     });
   });
-}
 
-function initHeaderInkByChapter() {
-  const header = document.getElementById("site-header");
-  const chapters = [...document.querySelectorAll("[data-ink]")];
-  if (!header || !chapters.length) return;
-
-  const syncHeaderInk = () => {
-    const sampleY = 40;
-    for (let i = chapters.length - 1; i >= 0; i--) {
-      const rect = chapters[i].getBoundingClientRect();
-      if (rect.top <= sampleY && rect.bottom >= sampleY) {
-        header.style.setProperty("--header-ink", chapters[i].getAttribute("data-ink"));
-        break;
-      }
-    }
-  };
-
-  syncHeaderInk();
-  window.addEventListener("scroll", syncHeaderInk, { passive: true });
+  render();
 }
 
 function initRevealsAndVideo() {
+  document.documentElement.classList.add("js");
   const calm = window.matchMedia("(prefers-reduced-motion: reduce)");
   const videos = document.querySelectorAll("video[autoplay]");
   const syncVideo = () => {
@@ -311,6 +289,5 @@ document.addEventListener("DOMContentLoaded", () => {
   initCalibrator();
   initProcessAccordion();
   initCommissionRouter();
-  initHeaderInkByChapter();
   initRevealsAndVideo();
 });

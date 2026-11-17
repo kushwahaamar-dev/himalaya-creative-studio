@@ -71,7 +71,7 @@ body {
 }
 
 :focus-visible {
-  outline: 3px solid var(--accent);
+  outline: 3px solid currentColor;
   outline-offset: 3px;
 }
 
@@ -123,7 +123,6 @@ a {
 }
 
 .wordmark {
-  pointer-events: auto;
   font-family: var(--font-display);
   font-weight: 900;
   font-size: var(--step-lead);
@@ -134,16 +133,15 @@ a {
 }
 
 .site-nav {
-  pointer-events: auto;
   display: flex;
   align-items: center;
-  gap: 1.75rem;
+  gap: 1.25rem;
 }
 
 .site-nav__links {
   display: flex;
   align-items: center;
-  gap: 1.5rem;
+  gap: 1.25rem;
   list-style: none;
   margin: 0;
   padding: 0;
@@ -156,7 +154,6 @@ a {
 }
 
 .button {
-  pointer-events: auto;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -167,6 +164,7 @@ a {
   font-family: var(--font-text);
   font-size: var(--step-body);
   font-weight: 500;
+  white-space: nowrap;
   text-decoration: none;
   border: 0;
   border-radius: 0;
@@ -1186,13 +1184,9 @@ a {
 
   .work-row--r2 .work-tile--w4,
   .work-row--r2 .work-tile--w5,
-  .work-row--r2 .work-tile--w2 {
-    flex: 1 1 100%;
-  }
-
   .work-row--r3 .work-tile--w3,
   .work-row--r3 .work-tile--w1,
-  .work-row--r3 .work-tile--w5 {
+  .work-row--r3 .work-tile--w2 {
     flex: 1 1 100%;
   }
 
