@@ -95,6 +95,16 @@ function initDeck() {
     const key = card.getAttribute("data-project");
     card.addEventListener("mouseenter", () => previewProject(key, card));
     card.addEventListener("focus", () => previewProject(key, card));
+    card.addEventListener("mousemove", (e) => {
+      if (window.innerWidth <= 960) return;
+      const rect = card.getBoundingClientRect();
+      const rx = ((e.clientY - rect.top) / rect.height - 0.5) * -14;
+      const ry = ((e.clientX - rect.left) / rect.width - 0.5) * 16;
+      card.style.transform = `translate3d(0, -30px, 42px) rotateX(${rx.toFixed(1)}deg) rotateY(${ry.toFixed(1)}deg) scale(1.07)`;
+    });
+    card.addEventListener("mouseleave", () => {
+      card.style.transform = "";
+    });
     card.addEventListener("click", () => openInspector(key));
     card.addEventListener("keydown", (e) => {
       if (e.key === "Enter" || e.key === " ") {
@@ -138,7 +148,29 @@ function initThemeToggle() {
   });
 }
 
+function initReveals() {
+  document.documentElement.classList.add("js");
+  const calm = window.matchMedia("(prefers-reduced-motion: reduce)");
+  if ("IntersectionObserver" in window && !calm.matches) {
+    const io = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-in");
+            io.unobserve(entry.target);
+          }
+        });
+      },
+      { rootMargin: "0px 0px -6% 0px", threshold: 0.08 }
+    );
+    document.querySelectorAll("[data-reveal]").forEach((el) => io.observe(el));
+  } else {
+    document.querySelectorAll("[data-reveal]").forEach((el) => el.classList.add("is-in"));
+  }
+}
+
 document.addEventListener("DOMContentLoaded", () => {
   initDeck();
   initThemeToggle();
+  initReveals();
 });
