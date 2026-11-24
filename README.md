@@ -22,7 +22,7 @@ GitHub repository: https://github.com/kushwahaamar-dev/himalaya-creative-studio
 
 ## Architecture and files
 
-- `index.html` implements a minimalist architectural layout with a floating navigation dock, editorial statement hero, direct clickable contact bar, 3-panel visual triptych featuring the official company logo card, two-column hairline services grid with slide-over scope drawer, mission statement, consultation brief form, and minimal footer.
+- `index.html` implements a minimalist architectural layout with a floating navigation dock (using the extracted transparent mountain crest), editorial statement hero, direct clickable contact bar, equal-height 2-panel alpine visual diptych, two-column hairline services grid with slide-over scope drawer, mission statement, consultation brief form, and minimal footer.
 - `styles.css` uses a pure white ground (`#ffffff`), near-black ink (`#111111`), muted secondary ink (`#6e6e73`), and Satoshi typography with responsive support across mobile (`320px`, `390px`), tablet (`768px`), laptop (`1024px`), and desktop (`1440px`) viewports.
 - `app.js` manages the slide-over practice scope drawer, service pre-selection into the inquiry form, copy-to-clipboard actions, mobile navigation sheet with scroll lock, and consultation brief validation with `mailto:` and WhatsApp dispatch.
 - `assets/himalaya-crest.png`, `assets/himalaya-lockup.png`, and `assets/himalaya-logo.jpg` store the official company logo and transparent brand marks.
