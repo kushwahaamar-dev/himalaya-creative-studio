@@ -1,48 +1,46 @@
-# Himalaya Creative Studio Limited
+# Himalaya Creative Studio Ltd
 
-Static web portfolio for Himalaya Creative Studio Limited (`himalayacreativestudio.com`).
+Official landing page for Himalaya Creative Studio Ltd, a London-based Business Development and Management Company (`16 Dimond Close, E7 0HZ, London, UK`).
 
 Live production URL on Vercel: https://dai-sage.vercel.app
 GitHub repository: https://github.com/kushwahaamar-dev/himalaya-creative-studio
 
+## Services covered
+
+- Business Development & Consultancy
+- Strategic Planning
+- Business Management Solutions
+- Operational Improvement
+- Business Growth & Development
+- Creative and Professional Solutions
+
+## Contact details
+
+- Address: `16 Dimond Close, E7 0HZ, London, UK`
+- Telephone & WhatsApp: `07467 604323` (`+44 7467 604323`)
+- Email: `Himalayacreativestudio@gmail.com`
+
 ## Architecture and files
 
-The site runs as zero-dependency static HTML, CSS, and JavaScript.
-
-- `index.html` defines the document structure, the 6-card fanned project deck, the 3D project inspector, the 2x2 work highlight grid, the service routing links, and the studio desk footer.
-- `styles.css` loads Clash Display and Satoshi from Fontshare, defines the light and dark theme tokens (`--bg`, `--surface`, `--ink`, `--muted`, `--accent`, `--line`), sets the architectural grid, and handles the responsive breakpoint at `960px` and `600px`.
-- `app.js` holds the `PROJECTS` lookup table and wires three functions: `initDeck()` for the fanned card hover states, 3D pointer tilt, and 3D spinning card inspector, `initThemeToggle()` for the `Aa` light and dark mode switch, and `initReveals()` for the `IntersectionObserver` scroll entrances.
-- `assets/` stores the 10 raster photographs, 1 `.webm` video loop, 1 video poster frame, and `assets/credits.json`.
-- `scripts/verify-deployments.mjs` launches headless Chrome over the Chrome DevTools Protocol and asserts that the initial backdrop title, card hover transitions, 3D inspector drawer, dark theme toggle, and image loads pass with zero console errors.
-
-## Studio email routing
-
-Each link in the services and footer sections routes to its Google Workspace alias on `himalayacreativestudio.com`:
-
-- `hello@himalayacreativestudio.com` handles new commissions and general introductions.
-- `projects@himalayacreativestudio.com` handles active client briefs and engineering inquiries.
-- `design@himalayacreativestudio.com` handles brand identity, typography, and UI design systems.
-- `accounts@himalayacreativestudio.com` handles invoicing and commercial onboarding.
+- `index.html` defines the midnight-navy and champagne-gold consultancy layout, official logo lockup, clickable contact strip, six interactive service cards with detail modal, 3-step Business Growth Diagnostic, 4-stage consulting approach tabs, mission and London office block, consultation brief form, and footer.
+- `styles.css` pairs Cormorant Garamond with Satoshi in the official brand palette (`#0b111c`, `#121b2b`, `#d4af63`, `#f8f7f3`) with full responsive support down to `390px`.
+- `app.js` manages the service detail modal, interactive growth diagnostic roadmap generator, approach phase tabs, copy-to-clipboard actions, mobile navigation drawer, and consultation brief validation with `mailto:` and WhatsApp dispatch.
+- `assets/himalaya-crest.png`, `assets/himalaya-lockup.png`, and `assets/himalaya-logo.jpg` store the official company logo and transparent brand marks.
+- `scripts/verify-deployments.mjs` runs headless Chrome checks across desktop (`1440x900`) and mobile (`390x844`) viewports to verify every interactive flow, link, image, and zero horizontal overflow.
 
 ## Run locally
-
-Start a static HTTP server from the repository root:
 
 ```sh
 	python3 -m http.server 4173 --bind 127.0.0.1
 ```
 
-Open `http://127.0.0.1:4173` in a browser.
+Open `http://127.0.0.1:4173`.
 
 ## Verify and deploy
-
-Run the automated Chrome verification script against the local server and the live Vercel deployment:
 
 ```sh
 	node scripts/verify-deployments.mjs http://127.0.0.1:4173 https://dai-sage.vercel.app
 ```
-
-Deploy to Vercel production from the repository root:
 
 ```sh
 	vercel deploy --prod --yes
