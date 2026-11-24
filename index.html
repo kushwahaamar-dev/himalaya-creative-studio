@@ -3,361 +3,222 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Himalaya Creative Studio Ltd — Business Development &amp; Management Consultancy, London</title>
-  <meta name="description" content="Himalaya Creative Studio Ltd is a London-based Business Development and Management Company helping ambitious businesses grow, evolve, and achieve long-term success.">
+  <title>Himalaya Creative Studio Ltd — Business Development &amp; Management, London</title>
+  <meta name="description" content="Himalaya Creative Studio Ltd is a London-based Business Development and Management Company committed to helping businesses grow, evolve, and achieve long-term success.">
   <link rel="icon" type="image/png" href="assets/himalaya-crest.png">
   <link rel="preconnect" href="https://api.fontshare.com">
-  <link href="https://api.fontshare.com/v2/css?f[]=clash-display@500,600,700&amp;f[]=satoshi@400,500,700&amp;display=swap" rel="stylesheet">
+  <link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700&amp;display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <header class="topbar">
-    <div class="wrap topbar__inner">
-      <a href="#top" class="brand" aria-label="Himalaya Creative Studio Ltd">
-        <img src="assets/himalaya-crest.png" alt="Himalaya Creative Studio Ltd crest" class="brand__crest" width="44" height="28">
-        <span class="brand__name"><span>Himalaya</span> Studio Ltd</span>
+  <header class="dock-wrap">
+    <div class="dock">
+      <a href="#top" class="dock__brand" aria-label="Himalaya Creative Studio Ltd">
+        <img src="assets/himalaya-crest.png" alt="Himalaya crest" class="dock__crest" width="28" height="18">
+        <span>Himalaya</span>
       </a>
-
       <nav aria-label="Primary">
-        <ul class="nav">
-          <li><a href="#services">Practice</a></li>
-          <li><a href="#diagnostic">Diagnostic</a></li>
-          <li><a href="#approach">Process</a></li>
-          <li><a href="#about">London</a></li>
-          <li><a href="#contact">Contact</a></li>
+        <ul class="dock__nav">
+          <li><a href="#services">Services</a></li>
+          <li><a href="#mission">Mission</a></li>
+          <li><a href="#contact">London</a></li>
         </ul>
       </nav>
-
-      <div class="topbar__right">
-        <a href="tel:+447467604323" class="topbar__phone">07467 604323</a>
-        <a href="#contact" class="btn btn--gold">Start a Conversation ↗</a>
-        <button type="button" class="menu-btn" id="menu-toggle" aria-expanded="false" aria-controls="mobile-drawer" aria-label="Open navigation">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="3" y1="8" x2="21" y2="8"/><line x1="3" y1="16" x2="21" y2="16"/></svg>
-        </button>
-      </div>
+      <a href="#contact" class="dock__cta">Get in touch</a>
+      <button type="button" class="dock__menu" id="menu-toggle" aria-expanded="false" aria-controls="mobile-drawer" aria-label="Menu">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="4" y1="8" x2="20" y2="8"/><line x1="4" y1="16" x2="20" y2="16"/></svg>
+      </button>
     </div>
   </header>
 
-  <div class="mobile-menu" id="mobile-drawer" aria-hidden="true">
-    <ul class="mobile-menu__links">
-      <li><a href="#services" data-drawer-link>Practice</a></li>
-      <li><a href="#diagnostic" data-drawer-link>Diagnostic</a></li>
-      <li><a href="#approach" data-drawer-link>Process</a></li>
-      <li><a href="#about" data-drawer-link>Mission &amp; London</a></li>
+  <div class="mobile-sheet" id="mobile-drawer" aria-hidden="true">
+    <ul class="mobile-sheet__nav">
+      <li><a href="#services" data-drawer-link>Services</a></li>
+      <li><a href="#mission" data-drawer-link>Mission</a></li>
       <li><a href="#contact" data-drawer-link>Contact</a></li>
     </ul>
-    <div class="mobile-menu__meta">
-      <a href="tel:+447467604323">Tel: 07467 604323</a>
+    <div class="mobile-sheet__meta">
+      <a href="tel:+447467604323">07467 604323</a>
       <a href="mailto:Himalayacreativestudio@gmail.com">Himalayacreativestudio@gmail.com</a>
       <a href="https://www.google.com/maps/search/?api=1&amp;query=16+Dimond+Close,+E7+0HZ,+London,+UK" target="_blank" rel="noopener noreferrer">16 Dimond Close, E7 0HZ, London, UK</a>
     </div>
   </div>
 
   <main id="top">
-    <section class="hero" aria-labelledby="hero-heading">
-      <canvas class="hero-canvas" id="contour-canvas" aria-hidden="true"></canvas>
-
-      <div class="wrap hero__content">
-        <div class="hero__top-meta">
-          <span><strong>Himalaya Creative Studio Ltd</strong> · Business Development &amp; Management</span>
-          <span id="london-clock">London, UK · GMT</span>
-        </div>
-
-        <h1 class="hero__headline" id="hero-heading">
-          Building Businesses.<br>
-          Creating Opportunities.<br>
-          <span class="gold">Driving Growth.</span>
+    <section class="hero">
+      <div class="container">
+        <h1 class="hero__statement">
+          Himalaya Creative Studio Ltd is a London business development and management company.
+          <span>Building businesses, creating opportunities, driving growth.</span>
         </h1>
 
-        <div class="hero__lower">
-          <div class="hero__intro">
-            <p class="hero__lead">A London-based Business Development and Management Company empowering ambitious organisations with practical strategy, operational precision, and creative execution.</p>
-            <div class="hero__actions">
-              <a href="#contact" class="btn btn--gold">Book a Discovery Call ↗</a>
-              <a href="#services" class="btn btn--ghost">Explore Our Practice</a>
-            </div>
+        <div class="hero__bar">
+          <div class="hero__links">
+            <a href="mailto:Himalayacreativestudio@gmail.com" class="text-link">Himalayacreativestudio@gmail.com</a>
+            <a href="tel:+447467604323" class="text-link">07467 604323</a>
+            <a href="https://wa.me/447467604323?text=Hello%20Himalaya%20Creative%20Studio%20Ltd%2C%20I%20would%20like%20to%20discuss%20a%20consultation." target="_blank" rel="noopener noreferrer" class="text-link">WhatsApp ↗</a>
           </div>
+          <a href="https://www.google.com/maps/search/?api=1&amp;query=16+Dimond+Close,+E7+0HZ,+London,+UK" target="_blank" rel="noopener noreferrer">16 Dimond Close, E7 0HZ, London, UK ↗</a>
+        </div>
 
-          <aside class="identity-plate" aria-label="Official company lockup">
-            <img src="assets/himalaya-lockup.png" alt="Himalaya Creative Studio Limited official logo" class="identity-plate__logo" width="170" height="105">
-            <div class="identity-plate__info">
-              <span class="identity-plate__motto">Your Vision. Our Strategy. Shared Success.</span>
-              <a href="https://www.google.com/maps/search/?api=1&amp;query=16+Dimond+Close,+E7+0HZ,+London,+UK" target="_blank" rel="noopener noreferrer">16 Dimond Close, E7 0HZ, London, UK</a>
-              <a href="tel:+447467604323">Tel: 07467 604323</a>
-            </div>
-          </aside>
+        <div class="triptych">
+          <div class="triptych__tile triptych__tile--brand">
+            <img src="assets/himalaya-logo.jpg" width="1376" height="768" fetchpriority="high" alt="Himalaya Creative Studio Limited official identity">
+          </div>
+          <div class="triptych__tile">
+            <img src="assets/everest-nuptse-khumbu-glacier-nepal-himalayas.jpg" width="1920" height="1356" fetchpriority="high" alt="High-altitude alpine ridge">
+          </div>
+          <div class="triptych__tile">
+            <video autoplay muted loop playsinline preload="metadata" poster="assets/snow-capped-himalayan-mountains-rasuwa-poster.jpg" width="608" height="1080" aria-hidden="true">
+              <source src="assets/snow-capped-himalayan-mountains-rasuwa.webm" type="video/webm">
+            </video>
+          </div>
+        </div>
+
+        <div class="triptych__caption">
+          <span>Your Vision. Our Strategy. Shared Success.</span>
+          <span>London, United Kingdom</span>
         </div>
       </div>
+    </section>
 
-      <div class="hero-rail">
-        <div class="wrap hero-rail__grid">
-          <div class="rail-cell">
-            <div>
-              <span class="rail-cell__label">London Office</span>
-              <a href="https://www.google.com/maps/search/?api=1&amp;query=16+Dimond+Close,+E7+0HZ,+London,+UK" target="_blank" rel="noopener noreferrer" class="rail-cell__val">16 Dimond Close, E7 0HZ, London, UK</a>
-            </div>
-            <a href="https://www.google.com/maps/search/?api=1&amp;query=16+Dimond+Close,+E7+0HZ,+London,+UK" target="_blank" rel="noopener noreferrer" class="mini-pill">Map ↗</a>
-          </div>
+    <section class="section" id="services" aria-labelledby="services-label">
+      <div class="container section-grid">
+        <h2 class="section-col-title" id="services-label">Services</h2>
 
-          <div class="rail-cell">
-            <div>
-              <span class="rail-cell__label">Direct Advisory Line</span>
-              <a href="tel:+447467604323" class="rail-cell__val">07467 604323</a>
-            </div>
-            <a href="https://wa.me/447467604323?text=Hello%20Himalaya%20Creative%20Studio%20Ltd%2C%20I%20would%20like%20to%20discuss%20a%20business%20consultation." target="_blank" rel="noopener noreferrer" class="mini-pill">WhatsApp</a>
-          </div>
+        <div class="services-list">
+          <button type="button" class="service-item" data-service-key="consultancy">
+            <span class="service-item__head">
+              <span class="service-item__title">Business Development &amp; Consultancy</span>
+              <span class="service-item__arrow" aria-hidden="true">↗</span>
+            </span>
+            <span class="service-item__desc">Market entry, commercial pipeline architecture, and executive advisory to build sustainable revenue.</span>
+          </button>
 
-          <div class="rail-cell">
+          <button type="button" class="service-item" data-service-key="strategic">
+            <span class="service-item__head">
+              <span class="service-item__title">Strategic Planning</span>
+              <span class="service-item__arrow" aria-hidden="true">↗</span>
+            </span>
+            <span class="service-item__desc">Clear multi-year roadmaps, competitive positioning, and accountable quarterly KPI frameworks.</span>
+          </button>
+
+          <button type="button" class="service-item" data-service-key="management">
+            <span class="service-item__head">
+              <span class="service-item__title">Business Management Solutions</span>
+              <span class="service-item__arrow" aria-hidden="true">↗</span>
+            </span>
+            <span class="service-item__desc">Organisational structure, leadership reporting systems, and dependable management governance.</span>
+          </button>
+
+          <button type="button" class="service-item" data-service-key="operations">
+            <span class="service-item__head">
+              <span class="service-item__title">Operational Improvement</span>
+              <span class="service-item__arrow" aria-hidden="true">↗</span>
+            </span>
+            <span class="service-item__desc">Workflow audits, bottleneck elimination, and standard operating procedures that protect margin.</span>
+          </button>
+
+          <button type="button" class="service-item" data-service-key="growth">
+            <span class="service-item__head">
+              <span class="service-item__title">Business Growth &amp; Development</span>
+              <span class="service-item__arrow" aria-hidden="true">↗</span>
+            </span>
+            <span class="service-item__desc">Client acquisition playbooks, retention architecture, and structured UK and international expansion.</span>
+          </button>
+
+          <button type="button" class="service-item" data-service-key="creative">
+            <span class="service-item__head">
+              <span class="service-item__title">Creative and Professional Solutions</span>
+              <span class="service-item__arrow" aria-hidden="true">↗</span>
+            </span>
+            <span class="service-item__desc">Executive pitch decks, brand alignment, and digital collateral built to command trust.</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="mission" aria-labelledby="mission-label">
+      <div class="container section-grid">
+        <h2 class="section-col-title" id="mission-label">Mission</h2>
+
+        <div>
+          <p class="mission-quote">Our mission is to empower businesses with practical strategies, innovative ideas and professional support to turn opportunities into success.</p>
+
+          <div class="mission-sub">
             <div>
-              <span class="rail-cell__label">Email</span>
-              <a href="mailto:Himalayacreativestudio@gmail.com" class="rail-cell__val">Himalayacreativestudio@gmail.com</a>
+              <h3 class="mission-sub__title">Practical over theoretical</h3>
+              <p class="mission-sub__text">We work alongside founders and directors from audit through operational rollout so strategy translates directly into revenue and resilience.</p>
             </div>
-            <button type="button" class="mini-pill" id="copy-email-btn">Copy</button>
+            <div>
+              <h3 class="mission-sub__title">Built for long-term evolution</h3>
+              <p class="mission-sub__text">Your Vision. Our Strategy. Shared Success. Every engagement is structured around measurable outcomes for your team.</p>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="practices" id="services" aria-labelledby="services-heading">
-      <div class="wrap">
-        <div class="section-header">
-          <div>
-            <p class="kicker">Our Practice</p>
-            <h2 class="display-h2" id="services-heading">Six Disciplines.<br>One Growth Partner.</h2>
-          </div>
-          <p class="section-desc">Hover any discipline to preview deliverables, or click to open the full consulting dossier and start an inquiry.</p>
-        </div>
+    <section class="section" id="contact" aria-labelledby="contact-label">
+      <div class="container section-grid">
+        <h2 class="section-col-title" id="contact-label">Contact</h2>
 
-        <div class="practice-layout">
-          <div class="practice-index" role="list" aria-label="Consulting services">
-            <button type="button" class="practice-row is-active" data-service-key="consultancy">
-              <span class="practice-row__left">
-                <span class="practice-row__num">01</span>
-                <span class="practice-row__title">Business Development &amp; Consultancy</span>
-              </span>
-              <span class="practice-row__arrow" aria-hidden="true">↗</span>
-            </button>
-
-            <button type="button" class="practice-row" data-service-key="strategic">
-              <span class="practice-row__left">
-                <span class="practice-row__num">02</span>
-                <span class="practice-row__title">Strategic Planning</span>
-              </span>
-              <span class="practice-row__arrow" aria-hidden="true">↗</span>
-            </button>
-
-            <button type="button" class="practice-row" data-service-key="management">
-              <span class="practice-row__left">
-                <span class="practice-row__num">03</span>
-                <span class="practice-row__title">Business Management Solutions</span>
-              </span>
-              <span class="practice-row__arrow" aria-hidden="true">↗</span>
-            </button>
-
-            <button type="button" class="practice-row" data-service-key="operations">
-              <span class="practice-row__left">
-                <span class="practice-row__num">04</span>
-                <span class="practice-row__title">Operational Improvement</span>
-              </span>
-              <span class="practice-row__arrow" aria-hidden="true">↗</span>
-            </button>
-
-            <button type="button" class="practice-row" data-service-key="growth">
-              <span class="practice-row__left">
-                <span class="practice-row__num">05</span>
-                <span class="practice-row__title">Business Growth &amp; Development</span>
-              </span>
-              <span class="practice-row__arrow" aria-hidden="true">↗</span>
-            </button>
-
-            <button type="button" class="practice-row" data-service-key="creative">
-              <span class="practice-row__left">
-                <span class="practice-row__num">06</span>
-                <span class="practice-row__title">Creative and Professional Solutions</span>
-              </span>
-              <span class="practice-row__arrow" aria-hidden="true">↗</span>
-            </button>
-          </div>
-
-          <aside class="practice-preview" aria-live="polite">
-            <span class="practice-preview__tag" id="preview-tag">Commercial Advisory</span>
-            <h3 class="practice-preview__title" id="preview-title">Business Development &amp; Consultancy</h3>
-            <p class="practice-preview__desc" id="preview-desc">We work directly with founders and directors to identify untapped revenue streams, structure strategic partnerships, and build repeatable commercial pipelines.</p>
-            <ul class="practice-preview__list" id="preview-list">
-              <li>Market entry &amp; commercial opportunity assessment</li>
-              <li>B2B partnership &amp; client acquisition strategy</li>
-              <li>Proposal, pricing, and deal-closing frameworks</li>
-            </ul>
-            <button type="button" class="btn btn--gold" id="preview-open-btn">Open Full Dossier ↗</button>
-          </aside>
-        </div>
-      </div>
-    </section>
-
-    <section class="diagnostic-band" id="diagnostic" aria-labelledby="diagnostic-heading">
-      <div class="wrap">
-        <div class="section-header">
-          <div>
-            <p class="kicker">Interactive Strategy Instrument</p>
-            <h2 class="display-h2" id="diagnostic-heading">Configure Your<br>Growth Roadmap.</h2>
-          </div>
-          <p class="section-desc">Select your business stage, primary bottleneck, and horizon to generate a tailored consulting blueprint.</p>
-        </div>
-
-        <div class="diagnostic-grid">
-          <div class="diag-controls">
+        <div class="contact-wrap">
+          <div class="contact-details">
             <div>
-              <span class="diag-block__label">01 · Current Business Stage</span>
-              <div class="diag-pills" role="group" aria-label="Business stage">
-                <button type="button" class="diag-pill" data-diag-group="stage" data-diag-value="startup" aria-pressed="false">Early-Stage / Startup</button>
-                <button type="button" class="diag-pill" data-diag-group="stage" data-diag-value="sme" aria-pressed="true">Growing SME</button>
-                <button type="button" class="diag-pill" data-diag-group="stage" data-diag-value="enterprise" aria-pressed="false">Established Enterprise</button>
+              <span class="contact-row__label">Email</span>
+              <a href="mailto:Himalayacreativestudio@gmail.com" class="contact-row__val">Himalayacreativestudio@gmail.com</a>
+              <div class="contact-row__actions">
+                <button type="button" class="text-link" id="copy-email-btn">Copy email</button>
               </div>
             </div>
 
             <div>
-              <span class="diag-block__label">02 · Primary Business Priority</span>
-              <div class="diag-pills" role="group" aria-label="Primary priority">
-                <button type="button" class="diag-pill" data-diag-group="challenge" data-diag-value="revenue" aria-pressed="true">Revenue &amp; Pipeline</button>
-                <button type="button" class="diag-pill" data-diag-group="challenge" data-diag-value="strategy" aria-pressed="false">Strategic Direction</button>
-                <button type="button" class="diag-pill" data-diag-group="challenge" data-diag-value="operations" aria-pressed="false">Operational Friction</button>
-                <button type="button" class="diag-pill" data-diag-group="challenge" data-diag-value="positioning" aria-pressed="false">Brand &amp; Positioning</button>
+              <span class="contact-row__label">Telephone</span>
+              <a href="tel:+447467604323" class="contact-row__val">07467 604323</a>
+              <div class="contact-row__actions">
+                <a href="tel:+447467604323" class="text-link">Call now</a>
+                <a href="https://wa.me/447467604323?text=Hello%20Himalaya%20Creative%20Studio%20Ltd%2C%20I%20would%20like%20to%20discuss%20a%20consultation." target="_blank" rel="noopener noreferrer" class="text-link">WhatsApp ↗</a>
               </div>
             </div>
 
             <div>
-              <span class="diag-block__label">03 · Target Horizon</span>
-              <div class="diag-pills" role="group" aria-label="Target horizon">
-                <button type="button" class="diag-pill" data-diag-group="horizon" data-diag-value="90d" aria-pressed="true">90-Day Sprint</button>
-                <button type="button" class="diag-pill" data-diag-group="horizon" data-diag-value="6m" aria-pressed="false">6-Month Transformation</button>
-                <button type="button" class="diag-pill" data-diag-group="horizon" data-diag-value="annual" aria-pressed="false">Annual Advisory Partner</button>
+              <span class="contact-row__label">London Office</span>
+              <a href="https://www.google.com/maps/search/?api=1&amp;query=16+Dimond+Close,+E7+0HZ,+London,+UK" target="_blank" rel="noopener noreferrer" class="contact-row__val">16 Dimond Close, E7 0HZ, London, UK</a>
+              <div class="contact-row__actions">
+                <a href="https://www.google.com/maps/search/?api=1&amp;query=16+Dimond+Close,+E7+0HZ,+London,+UK" target="_blank" rel="noopener noreferrer" class="text-link">Open in Google Maps ↗</a>
               </div>
             </div>
           </div>
 
-          <div class="diag-readout" aria-live="polite">
-            <span class="diag-readout__meta" id="diag-tag">Recommended Engagement · 90-Day Sprint</span>
-            <h3 class="diag-readout__title" id="diag-title">Commercial Acceleration &amp; Pipeline Programme</h3>
-            <p class="diag-readout__summary" id="diag-summary">Tailored for a Growing SME. Aligns your commercial offer, builds a repeatable B2B outreach and partnership engine, and tracks weekly conversion KPIs.</p>
-            <div class="diag-readout__tags" id="diag-services">
-              <span>Business Development &amp; Consultancy</span>
-              <span>Business Growth &amp; Development</span>
-              <span>Strategic Planning</span>
-            </div>
-            <button type="button" class="btn btn--gold" id="diag-apply-btn">Load Roadmap into Inquiry ↗</button>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="approach-band" id="approach" aria-labelledby="approach-heading">
-      <div class="wrap">
-        <div class="section-header">
-          <div>
-            <p class="kicker">How We Execute</p>
-            <h2 class="display-h2" id="approach-heading">From Audit to<br>Sustained Scale.</h2>
-          </div>
-          <p class="section-desc">A disciplined four-stage consulting architecture built for measurable commercial outcomes.</p>
-        </div>
-
-        <div class="phase-track" role="tablist" aria-label="Consulting phases">
-          <button type="button" class="phase-tab" role="tab" aria-selected="true" data-phase="0">
-            <span class="phase-tab__num">STAGE 01</span>
-            <span class="phase-tab__name">Discovery &amp; Audit</span>
-          </button>
-          <button type="button" class="phase-tab" role="tab" aria-selected="false" data-phase="1">
-            <span class="phase-tab__num">STAGE 02</span>
-            <span class="phase-tab__name">Strategic Blueprint</span>
-          </button>
-          <button type="button" class="phase-tab" role="tab" aria-selected="false" data-phase="2">
-            <span class="phase-tab__num">STAGE 03</span>
-            <span class="phase-tab__name">Operational Rollout</span>
-          </button>
-          <button type="button" class="phase-tab" role="tab" aria-selected="false" data-phase="3">
-            <span class="phase-tab__num">STAGE 04</span>
-            <span class="phase-tab__name">Sustained Growth</span>
-          </button>
-        </div>
-
-        <div class="phase-detail" aria-live="polite">
-          <div>
-            <h3 class="phase-detail__title" id="phase-title">Discovery &amp; Commercial Audit</h3>
-            <p class="phase-detail__desc" id="phase-desc">We begin by reviewing your commercial model, operational bottlenecks, revenue streams, and competitive position in the London and UK market. Within two weeks, leadership receives a frank, evidence-backed diagnostic.</p>
-          </div>
-          <div class="phase-detail__box">
-            <h4>Phase Deliverables</h4>
-            <ul id="phase-deliverables">
-              <li>— Commercial &amp; Operational Health Audit</li>
-              <li>— Opportunity &amp; Margin Gap Analysis</li>
-              <li>— Priority Risk Register &amp; Quick-Win Matrix</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="mission-band" id="about" aria-labelledby="mission-heading">
-      <div class="wrap">
-        <p class="kicker">Our Mission</p>
-        <h2 class="mission-statement" id="mission-heading">“Our mission is to empower businesses with practical strategies, innovative ideas and professional support to turn opportunities into success.”</h2>
-
-        <div class="mission-split">
-          <p class="mission-copy">Himalaya Creative Studio Ltd bridges boardroom strategy with day-to-day operational execution. Whether you are launching a new commercial line, restructuring management workflows, or scaling across the UK market, we partner with your leadership team for shared, measurable success.</p>
-
-          <aside class="london-plate" aria-label="London headquarters">
-            <div class="london-plate__head">
-              <span>London Headquarters</span>
-              <span>E7 · United Kingdom</span>
-            </div>
-            <p class="london-plate__addr">16 Dimond Close, E7 0HZ,<br>London, UK</p>
-            <div class="london-plate__links">
-              <a href="https://www.google.com/maps/search/?api=1&amp;query=16+Dimond+Close,+E7+0HZ,+London,+UK" target="_blank" rel="noopener noreferrer" class="btn btn--gold">Google Maps ↗</a>
-              <a href="tel:+447467604323" class="btn btn--ghost">07467 604323</a>
-            </div>
-          </aside>
-        </div>
-      </div>
-    </section>
-
-    <section class="contact-band" id="contact" aria-labelledby="contact-heading">
-      <div class="wrap">
-        <div class="section-header">
-          <div>
-            <p class="kicker">Start a Conversation</p>
-            <h2 class="display-h2" id="contact-heading">Let’s Build Your<br>Next Chapter.</h2>
-          </div>
-          <p class="section-desc">Prepare a structured consultation brief below or reach our London office directly via email, telephone, or WhatsApp.</p>
-        </div>
-
-        <div class="contact-layout">
           <div>
             <form id="consultation-form" novalidate>
               <div class="form-grid">
                 <div class="field">
-                  <label for="client-name">Full Name *</label>
-                  <input type="text" id="client-name" name="name" placeholder="Your name" autocomplete="name" required>
+                  <label for="client-name">Name *</label>
+                  <input type="text" id="client-name" name="name" placeholder="Your full name" autocomplete="name" required>
                   <span class="field-err" id="err-name" role="alert"></span>
                 </div>
                 <div class="field">
-                  <label for="client-company">Company / Organisation</label>
+                  <label for="client-company">Company</label>
                   <input type="text" id="client-company" name="company" placeholder="Company name" autocomplete="organization">
                 </div>
               </div>
 
               <div class="form-grid">
                 <div class="field">
-                  <label for="client-email">Email Address *</label>
+                  <label for="client-email">Email *</label>
                   <input type="email" id="client-email" name="email" placeholder="you@company.co.uk" autocomplete="email" required>
                   <span class="field-err" id="err-email" role="alert"></span>
                 </div>
                 <div class="field">
-                  <label for="client-phone">Telephone</label>
+                  <label for="client-phone">Phone</label>
                   <input type="tel" id="client-phone" name="phone" placeholder="+44 7..." autocomplete="tel">
                 </div>
               </div>
 
               <div class="field">
-                <label for="client-service">Primary Practice Area *</label>
+                <label for="client-service">Service *</label>
                 <select id="client-service" name="service" required>
                   <option value="Business Development & Consultancy">Business Development &amp; Consultancy</option>
                   <option value="Strategic Planning">Strategic Planning</option>
@@ -365,110 +226,57 @@
                   <option value="Operational Improvement">Operational Improvement</option>
                   <option value="Business Growth & Development">Business Growth &amp; Development</option>
                   <option value="Creative and Professional Solutions">Creative and Professional Solutions</option>
-                  <option value="General Business Consultation">General Business Consultation</option>
                 </select>
               </div>
 
               <div class="field">
-                <label for="client-message">Business Objectives &amp; Timeline *</label>
-                <textarea id="client-message" name="message" rows="4" placeholder="Tell us about your business goals and how we can support you..." required></textarea>
+                <label for="client-message">How can we support your business? *</label>
+                <textarea id="client-message" name="message" rows="4" placeholder="Share your goals or timeline..." required></textarea>
                 <span class="field-err" id="err-message" role="alert"></span>
               </div>
 
-              <button type="submit" class="btn btn--gold">Prepare Consultation Brief ↗</button>
+              <button type="submit" class="btn btn--dark">Send inquiry</button>
             </form>
 
-            <div class="brief-ready" id="form-confirmation" aria-live="polite">
-              <h3 class="brief-ready__title">Consultation Brief Ready</h3>
-              <p>Dispatch your brief directly to <strong>Himalayacreativestudio@gmail.com</strong> or our London WhatsApp advisory desk:</p>
-              <div class="brief-ready__pre" id="brief-preview"></div>
-              <div class="brief-ready__actions">
-                <a href="#" class="btn btn--gold" id="send-email-link">Open in Email App ↗</a>
-                <a href="#" target="_blank" rel="noopener noreferrer" class="btn btn--ghost" id="send-whatsapp-link">Send via WhatsApp ↗</a>
-                <button type="button" class="btn btn--ghost" id="copy-brief-btn">Copy Brief</button>
-                <button type="button" class="btn btn--ghost" id="edit-brief-btn">Edit Details</button>
+            <div class="brief-confirm" id="form-confirmation" aria-live="polite">
+              <h3 class="brief-confirm__title">Your inquiry is ready to send</h3>
+              <div class="brief-confirm__pre" id="brief-preview"></div>
+              <div class="brief-confirm__actions">
+                <a href="#" class="btn btn--dark" id="send-email-link">Open in Email App ↗</a>
+                <a href="#" target="_blank" rel="noopener noreferrer" class="btn btn--subtle" id="send-whatsapp-link">Send via WhatsApp ↗</a>
+                <button type="button" class="btn btn--subtle" id="copy-brief-btn">Copy brief</button>
+                <button type="button" class="btn btn--subtle" id="edit-brief-btn">Edit</button>
               </div>
             </div>
           </div>
-
-          <aside class="contact-channels" aria-label="Direct studio contact channels">
-            <div class="channel-row">
-              <span class="channel-row__label">Direct Email</span>
-              <a href="mailto:Himalayacreativestudio@gmail.com" class="channel-row__val">Himalayacreativestudio@gmail.com</a>
-            </div>
-            <div class="channel-row">
-              <span class="channel-row__label">Telephone</span>
-              <a href="tel:+447467604323" class="channel-row__val">07467 604323</a>
-            </div>
-            <div class="channel-row">
-              <span class="channel-row__label">WhatsApp Advisory</span>
-              <a href="https://wa.me/447467604323?text=Hello%20Himalaya%20Creative%20Studio%20Ltd%2C%20I%20would%20like%20to%20book%20a%20consultation." target="_blank" rel="noopener noreferrer" class="channel-row__val">Message +44 7467 604323 ↗</a>
-            </div>
-            <div class="channel-row">
-              <span class="channel-row__label">Registered Office</span>
-              <a href="https://www.google.com/maps/search/?api=1&amp;query=16+Dimond+Close,+E7+0HZ,+London,+UK" target="_blank" rel="noopener noreferrer" class="channel-row__val">16 Dimond Close, E7 0HZ, London, UK ↗</a>
-            </div>
-          </aside>
         </div>
       </div>
     </section>
   </main>
 
   <footer class="site-footer">
-    <div class="wrap">
-      <div class="footer-meta">
-        <div>
-          <img src="assets/himalaya-lockup.png" alt="Himalaya Creative Studio Limited" class="footer-logo" width="190" height="118">
-          <p style="color: var(--muted); font-size: 0.92rem;">Your Vision. Our Strategy. Shared Success.</p>
-        </div>
-
-        <div class="footer-col">
-          <h3>Practice Areas</h3>
-          <ul>
-            <li><button type="button" data-select-service="Business Development & Consultancy">Business Development &amp; Consultancy</button></li>
-            <li><button type="button" data-select-service="Strategic Planning">Strategic Planning</button></li>
-            <li><button type="button" data-select-service="Business Management Solutions">Business Management Solutions</button></li>
-            <li><button type="button" data-select-service="Operational Improvement">Operational Improvement</button></li>
-            <li><button type="button" data-select-service="Business Growth & Development">Business Growth &amp; Development</button></li>
-            <li><button type="button" data-select-service="Creative and Professional Solutions">Creative and Professional Solutions</button></li>
-          </ul>
-        </div>
-
-        <div class="footer-col">
-          <h3>London Office</h3>
-          <ul>
-            <li><a href="https://www.google.com/maps/search/?api=1&amp;query=16+Dimond+Close,+E7+0HZ,+London,+UK" target="_blank" rel="noopener noreferrer">16 Dimond Close, E7 0HZ, London, UK</a></li>
-            <li><a href="tel:+447467604323">Tel: 07467 604323</a></li>
-            <li><a href="mailto:Himalayacreativestudio@gmail.com">Himalayacreativestudio@gmail.com</a></li>
-            <li><a href="#top">Back to Top ↑</a></li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="footer-legal">
-        <span>© 2026 Himalaya Creative Studio Ltd. All rights reserved.</span>
-        <span>Building Businesses. Creating Opportunities. Driving Growth.</span>
-      </div>
+    <div class="container footer-row">
+      <span>© 2026 Himalaya Creative Studio Ltd</span>
+      <span>16 Dimond Close, E7 0HZ, London, UK · 07467 604323</span>
+      <a href="#top" class="text-link">Top ↑</a>
     </div>
-
-    <div class="monument-word" aria-hidden="true">HIMALAYA</div>
   </footer>
 
   <div class="drawer-backdrop" id="service-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" aria-hidden="true">
-    <div class="dossier-drawer">
+    <div class="drawer">
       <div>
-        <div class="dossier-drawer__top">
-          <span class="kicker" id="modal-eyebrow" style="margin:0;">Practice Dossier</span>
-          <button type="button" class="dossier-close" id="modal-close" aria-label="Close dossier">×</button>
+        <div class="drawer__top">
+          <span style="font-size: 0.85rem; color: var(--muted);">Practice scope</span>
+          <button type="button" class="drawer__close" id="modal-close" aria-label="Close">×</button>
         </div>
-        <h3 class="dossier-title" id="modal-title">Service Title</h3>
-        <p class="dossier-desc" id="modal-desc"></p>
-        <ul class="dossier-list" id="modal-list"></ul>
+        <h3 class="drawer__title" id="modal-title">Service</h3>
+        <p class="drawer__desc" id="modal-desc"></p>
+        <ul class="drawer__list" id="modal-list"></ul>
       </div>
 
-      <div class="dossier-actions">
-        <button type="button" class="btn btn--gold" id="modal-inquire-btn">Inquire About This Service ↗</button>
-        <a href="tel:+447467604323" class="btn btn--ghost">Call 07467 604323</a>
+      <div class="drawer__actions">
+        <button type="button" class="btn btn--dark" id="modal-inquire-btn">Inquire about this service</button>
+        <a href="tel:+447467604323" class="btn btn--subtle">Call 07467 604323</a>
       </div>
     </div>
   </div>

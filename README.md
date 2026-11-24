@@ -22,11 +22,11 @@ GitHub repository: https://github.com/kushwahaamar-dev/himalaya-creative-studio
 
 ## Architecture and files
 
-- `index.html` defines the midnight-navy and champagne-gold consultancy layout, official logo lockup, clickable contact strip, six interactive service cards with detail modal, 3-step Business Growth Diagnostic, 4-stage consulting approach tabs, mission and London office block, consultation brief form, and footer.
-- `styles.css` pairs Cormorant Garamond with Satoshi in the official brand palette (`#0b111c`, `#121b2b`, `#d4af63`, `#f8f7f3`) with full responsive support down to `390px`.
-- `app.js` manages the service detail modal, interactive growth diagnostic roadmap generator, approach phase tabs, copy-to-clipboard actions, mobile navigation drawer, and consultation brief validation with `mailto:` and WhatsApp dispatch.
+- `index.html` implements a minimalist architectural layout with a floating navigation dock, editorial statement hero, direct clickable contact bar, 3-panel visual triptych featuring the official company logo card, two-column hairline services grid with slide-over scope drawer, mission statement, consultation brief form, and minimal footer.
+- `styles.css` uses a pure white ground (`#ffffff`), near-black ink (`#111111`), muted secondary ink (`#6e6e73`), and Satoshi typography with responsive support across mobile (`320px`, `390px`), tablet (`768px`), laptop (`1024px`), and desktop (`1440px`) viewports.
+- `app.js` manages the slide-over practice scope drawer, service pre-selection into the inquiry form, copy-to-clipboard actions, mobile navigation sheet with scroll lock, and consultation brief validation with `mailto:` and WhatsApp dispatch.
 - `assets/himalaya-crest.png`, `assets/himalaya-lockup.png`, and `assets/himalaya-logo.jpg` store the official company logo and transparent brand marks.
-- `scripts/verify-deployments.mjs` runs headless Chrome checks across desktop (`1440x900`) and mobile (`390x844`) viewports to verify every interactive flow, link, image, and zero horizontal overflow.
+- `scripts/verify-deployments.mjs` runs headless Chrome checks across five viewports (`320px`, `390px`, `768px`, `1024px`, `1440px`) to verify every interactive flow, link, image, and zero horizontal overflow.
 
 ## Run locally
 
