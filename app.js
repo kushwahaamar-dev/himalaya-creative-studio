@@ -262,6 +262,7 @@ function initMobileMenu() {
     drawer.classList.toggle("is-open", open);
     drawer.setAttribute("aria-hidden", String(!open));
     toggle.setAttribute("aria-expanded", String(open));
+    document.body.style.overflow = open ? "hidden" : "";
   };
 
   toggle.addEventListener("click", () => setOpen(!drawer.classList.contains("is-open")));
@@ -326,6 +327,7 @@ function initPracticesAndDossier() {
     if (!modal) return;
     modal.classList.remove("is-open");
     modal.setAttribute("aria-hidden", "true");
+    document.body.style.overflow = "";
   };
 
   const openDossier = (key) => {
@@ -339,6 +341,7 @@ function initPracticesAndDossier() {
     inquireBtn.textContent = `Inquire About ${svc.title} ↗`;
     modal.classList.add("is-open");
     modal.setAttribute("aria-hidden", "false");
+    document.body.style.overflow = "hidden";
     closeBtn?.focus();
   };
 

@@ -97,6 +97,10 @@ button {
   margin-inline: auto;
 }
 
+section[id] {
+  scroll-margin-top: 84px;
+}
+
 .topbar {
   position: fixed;
   top: 0;
@@ -453,10 +457,14 @@ button {
 }
 
 .mini-pill {
-  padding: 0.3rem 0.75rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 38px;
+  padding: 0.45rem 0.9rem;
   border-radius: 999px;
   border: 1px solid var(--border-gold);
-  font-size: 0.74rem;
+  font-size: 0.78rem;
   font-weight: 600;
   color: var(--gold-bright);
   flex-shrink: 0;
@@ -1209,6 +1217,21 @@ button {
   border-top: 1px solid var(--border-dark);
 }
 
+@media (max-width: 1180px) {
+  .topbar__phone {
+    display: none;
+  }
+
+  .nav {
+    gap: 1.35rem;
+  }
+
+  .topbar__right .btn {
+    padding: 0.6rem 1.15rem;
+    font-size: 0.85rem;
+  }
+}
+
 @media (max-width: 1024px) {
   .hero__lower,
   .hero-rail__grid,
@@ -1274,5 +1297,46 @@ button {
   .mission-band,
   .contact-band {
     padding: 4.25rem 0;
+  }
+
+  .mini-pill {
+    min-height: 44px;
+    padding: 0.55rem 1rem;
+  }
+
+  .field input,
+  .field select,
+  .field textarea {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 420px) {
+  .wrap {
+    width: min(1400px, 100% - 1.5rem);
+  }
+
+  .topbar__inner {
+    gap: 0.5rem;
+  }
+
+  .brand {
+    gap: 0.5rem;
+    min-width: 0;
+  }
+
+  .brand__crest {
+    width: 34px;
+    height: 22px;
+  }
+
+  .brand__name {
+    font-size: 0.85rem;
+    letter-spacing: 0.02em;
+    white-space: nowrap;
+  }
+
+  .hero__headline {
+    font-size: 2.35rem;
   }
 }
