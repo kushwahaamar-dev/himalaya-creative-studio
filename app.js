@@ -173,6 +173,86 @@ function selectServiceAndScroll(serviceName, prefillMessage) {
   setTimeout(() => document.getElementById("client-name")?.focus(), 450);
 }
 
+function initContourCanvas() {
+  const canvas = document.getElementById("contour-canvas");
+  if (!canvas) return;
+  const ctx = canvas.getContext("2d");
+  if (!ctx) return;
+
+  const calm = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  let w = 0;
+  let h = 0;
+  let pointerX = 0.5;
+  let pointerY = 0.5;
+  let t = 0;
+
+  const resize = () => {
+    const dpr = Math.min(window.devicePixelRatio || 1, 2);
+    w = canvas.clientWidth;
+    h = canvas.clientHeight;
+    canvas.width = w * dpr;
+    canvas.height = h * dpr;
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+  };
+
+  const draw = () => {
+    ctx.clearRect(0, 0, w, h);
+    const lines = 11;
+    for (let i = 0; i < lines; i++) {
+      const ratio = i / (lines - 1);
+      ctx.beginPath();
+      const baseY = h * (0.2 + ratio * 0.72);
+      const alpha = 0.06 + (1 - Math.abs(ratio - 0.5) * 2) * 0.14;
+      ctx.strokeStyle = `rgba(212, 175, 99, ${alpha.toFixed(3)})`;
+      ctx.lineWidth = i === 5 ? 1.4 : 0.85;
+
+      for (let x = 0; x <= w; x += 28) {
+        const nx = x / Math.max(w, 1);
+        const ridge =
+          Math.sin(nx * 4.2 + t + i * 0.45) * 34 +
+          Math.cos(nx * 8.5 - t * 0.7 + i) * 14 +
+          (pointerY - 0.5) * 45 * Math.exp(-Math.pow((nx - pointerX) * 2.4, 2));
+        const y = baseY + ridge;
+        if (x === 0) ctx.moveTo(x, y);
+        else ctx.lineTo(x, y);
+      }
+      ctx.stroke();
+    }
+    if (!calm) {
+      t += 0.0045;
+      requestAnimationFrame(draw);
+    }
+  };
+
+  resize();
+  window.addEventListener("resize", resize);
+  window.addEventListener("mousemove", (e) => {
+    pointerX = e.clientX / Math.max(window.innerWidth, 1);
+    pointerY = e.clientY / Math.max(window.innerHeight, 1);
+  }, { passive: true });
+  draw();
+}
+
+function initLondonClock() {
+  const el = document.getElementById("london-clock");
+  if (!el) return;
+  const update = () => {
+    try {
+      const now = new Intl.DateTimeFormat("en-GB", {
+        timeZone: "Europe/London",
+        hour: "2-digit",
+        minute: "2-digit",
+        timeZoneName: "short"
+      }).format(new Date());
+      el.textContent = `London, UK · ${now}`;
+    } catch {
+      el.textContent = "London, UK";
+    }
+  };
+  update();
+  setInterval(update, 30000);
+}
+
 function initMobileMenu() {
   const toggle = document.getElementById("menu-toggle");
   const drawer = document.getElementById("mobile-drawer");
@@ -211,7 +291,14 @@ function initCopyEmail() {
   });
 }
 
-function initServiceModal() {
+function initPracticesAndDossier() {
+  const rows = [...document.querySelectorAll("[data-service-key]")];
+  const previewTag = document.getElementById("preview-tag");
+  const previewTitle = document.getElementById("preview-title");
+  const previewDesc = document.getElementById("preview-desc");
+  const previewList = document.getElementById("preview-list");
+  const previewOpenBtn = document.getElementById("preview-open-btn");
+
   const modal = document.getElementById("service-modal");
   const closeBtn = document.getElementById("modal-close");
   const eyebrowEl = document.getElementById("modal-eyebrow");
@@ -220,31 +307,49 @@ function initServiceModal() {
   const listEl = document.getElementById("modal-list");
   const inquireBtn = document.getElementById("modal-inquire-btn");
 
-  let currentServiceTitle = "";
+  let activeKey = "consultancy";
 
-  const close = () => {
+  const updatePreview = (key) => {
+    const svc = SERVICES[key];
+    if (!svc) return;
+    activeKey = key;
+    rows.forEach((r) => r.classList.toggle("is-active", r.getAttribute("data-service-key") === key));
+    if (previewTag) previewTag.textContent = svc.eyebrow;
+    if (previewTitle) previewTitle.textContent = svc.title;
+    if (previewDesc) previewDesc.textContent = svc.desc;
+    if (previewList) {
+      previewList.innerHTML = svc.deliverables.slice(0, 3).map((item) => `<li>${item}</li>`).join("");
+    }
+  };
+
+  const closeDossier = () => {
     if (!modal) return;
     modal.classList.remove("is-open");
     modal.setAttribute("aria-hidden", "true");
   };
 
-  const open = (key) => {
+  const openDossier = (key) => {
     const svc = SERVICES[key];
     if (!svc || !modal) return;
-    currentServiceTitle = svc.title;
+    updatePreview(key);
     eyebrowEl.textContent = svc.eyebrow;
     titleEl.textContent = svc.title;
     descEl.textContent = svc.desc;
     listEl.innerHTML = svc.deliverables.map((item) => `<li>${item}</li>`).join("");
-    inquireBtn.textContent = `Inquire About ${svc.title} →`;
+    inquireBtn.textContent = `Inquire About ${svc.title} ↗`;
     modal.classList.add("is-open");
     modal.setAttribute("aria-hidden", "false");
     closeBtn?.focus();
   };
 
-  document.querySelectorAll("[data-service-key]").forEach((card) => {
-    card.addEventListener("click", () => open(card.getAttribute("data-service-key")));
+  rows.forEach((row) => {
+    const key = row.getAttribute("data-service-key");
+    row.addEventListener("mouseenter", () => updatePreview(key));
+    row.addEventListener("focus", () => updatePreview(key));
+    row.addEventListener("click", () => openDossier(key));
   });
+
+  previewOpenBtn?.addEventListener("click", () => openDossier(activeKey));
 
   document.querySelectorAll("[data-select-service]").forEach((btn) => {
     btn.addEventListener("click", () => {
@@ -253,16 +358,17 @@ function initServiceModal() {
   });
 
   inquireBtn?.addEventListener("click", () => {
-    close();
-    selectServiceAndScroll(currentServiceTitle, `I would like to explore ${currentServiceTitle} for my business.`);
+    const svc = SERVICES[activeKey];
+    closeDossier();
+    selectServiceAndScroll(svc.title, `I would like to explore ${svc.title} for my business.`);
   });
 
-  closeBtn?.addEventListener("click", close);
+  closeBtn?.addEventListener("click", closeDossier);
   modal?.addEventListener("click", (e) => {
-    if (e.target === modal) close();
+    if (e.target === modal) closeDossier();
   });
   document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape") close();
+    if (e.key === "Escape") closeDossier();
   });
 }
 
@@ -277,12 +383,10 @@ function initDiagnostic() {
   const render = () => {
     const plan = DIAGNOSTIC_PLANS[state.challenge];
     if (!plan || !titleEl) return;
-    const horizonText = HORIZON_LABELS[state.horizon];
-    const stageText = STAGE_LABELS[state.stage];
-    tagEl.textContent = `Recommended Engagement · ${horizonText}`;
+    tagEl.textContent = `Recommended Engagement · ${HORIZON_LABELS[state.horizon]}`;
     titleEl.textContent = plan.title;
-    summaryEl.textContent = `Tailored for a ${stageText}. ${plan.summary}`;
-    listEl.innerHTML = plan.services.map((s) => `<li>◆ ${s}</li>`).join("");
+    summaryEl.textContent = `Tailored for a ${STAGE_LABELS[state.stage]}. ${plan.summary}`;
+    listEl.innerHTML = plan.services.map((s) => `<span>${s}</span>`).join("");
   };
 
   document.querySelectorAll("[data-diag-group]").forEach((btn) => {
@@ -320,7 +424,7 @@ function initApproachTabs() {
       tabs.forEach((t) => t.setAttribute("aria-selected", String(t === tab)));
       titleEl.textContent = phase.title;
       descEl.textContent = phase.desc;
-      listEl.innerHTML = phase.deliverables.map((d) => `<li>• ${d}</li>`).join("");
+      listEl.innerHTML = phase.deliverables.map((d) => `<li>— ${d}</li>`).join("");
     });
   });
 }
@@ -416,9 +520,11 @@ function initConsultationForm() {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
+  initContourCanvas();
+  initLondonClock();
   initMobileMenu();
   initCopyEmail();
-  initServiceModal();
+  initPracticesAndDossier();
   initDiagnostic();
   initApproachTabs();
   initConsultationForm();
